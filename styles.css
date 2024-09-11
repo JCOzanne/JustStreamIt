@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+}
+
+.logo {
+    height: 50px;
+}
+
+main {
+    padding: 20px;
+}
+
+.section-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.movie-section {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.movie {
+    min-width: 150px;
+    text-align: center;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.movie h4 {
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.movie-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.movie-highlight img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.details-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.view-more {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .movie-section {
+        flex-wrap: wrap;
+    }
+
+    .movie {
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie {
+        min-width: 90%;
+    }
+}
