@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             movieCard.classList.add('movie-card');
             if (index >= getVisibleMoviesCount()) movieCard.classList.add('hidden');
             movieCard.innerHTML = `
-                <img src="${movie.image_url}" alt="${movie.title}" onerror="this.onerror=null;this.src='default-image.jpg';">
+                <img src="${movie.image_url}" alt="${movie.title}" onerror="this.onerror=null;this.src='images/default-image.jpg';">
                 <h3>${movie.title}</h3>
                 <button class="details-btn" data-id="${movie.id}">Détails</button>
             `;
@@ -123,18 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Fonction pour afficher le meilleur film
-const displayBestMovie = (movie) => {
-    bestMovieCard.innerHTML = `
-        <img src="${movie.image_url}" alt="${movie.title}" onerror="this.onerror=null;this.src='default-image.jpg';">
-        <h3>${movie.title}</h3>
-        <p id="best-movie-description">A young violinist with leukemia brings hope and life into a desolate Russian hospital for children.</p>
-        <button class="details-btn" data-id="${movie.id}">Détails</button>
-    `;
-};
+    const displayBestMovie = (movie) => {
+        bestMovieCard.innerHTML = `
+            <img src="${movie.image_url}" alt="${movie.title}" onerror="this.onerror=null;this.src='images/default-image.jpg';">
+            <h3>${movie.title}</h3>
+            <p id="best-movie-description">A young violinist with leukemia brings hope and life into a desolate Russian hospital for children.</p>
+            <button class="details-btn" data-id="${movie.id}">Détails</button>
+        `;
+    };
 
 
     // Fonction pour afficher les détails d'un film dans la fenêtre modale
     const displayMovieDetails = async (movieId) => {
+    console.log('Affichage des détails pour le film ID : ', movieId); // Debug
 
     try {
         const response = await fetch(`${apiBaseUrl}${movieId}`);
@@ -148,7 +149,6 @@ const displayBestMovie = (movie) => {
         document.getElementById('modal-rating').textContent = `Classification: ${data.rated}`;
         const rating = data.rated && data.rated !== "Not rated or unkown rating" ? data.rated : "Classement non disponible";
         document.getElementById('modal-rating').textContent = `Classification: ${rating}`;
-
         document.getElementById('modal-director').textContent = `Réalisateur: ${data.directors.join(', ')}`;
         document.getElementById('modal-actors').textContent = `Acteurs: ${data.actors.join(', ')}`;
         document.getElementById('modal-duration').textContent = `Durée: ${data.duration} minutes`;
@@ -159,46 +159,42 @@ const displayBestMovie = (movie) => {
 
         // Affichage de la modale
         modal.style.display = 'block';
-        
-    } catch (error) {
-        console.error('Erreur lors de la récupération des détails du film :', error);
-    }
-};
-
-
+        } catch (error) {
+            console.error('Erreur lors de la récupération des détails du film :', error);
+        }
+    };
 
     // Écouter les changements de sélection de catégorie
     categorySelect.addEventListener('change', (event) => {
         const selectedCategory = event.target.value;
         if (selectedCategory) {
-            freeCategoryMovies.innerHTML = '';
+            freeCategoryMovies.innerHTML = ''; // Clear previous movies
             freeCategoryPage = 1;
             fetchMoviesByGenre(selectedCategory, freeCategoryPage);
         }
     });
 
-// Écouter les clics sur les boutons "Détails"
-document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('details-btn')) {
-        const movieId = event.target.getAttribute('data-id');
-        
-        displayMovieDetails(movieId);
-    }
-});
+    // Écouter les clics sur les boutons "Détails"
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('details-btn')) {
+            const movieId = event.target.getAttribute('data-id');
+            console.log('Bouton Détails cliqué, Film ID : ', movieId); // Debug
+            displayMovieDetails(movieId);
+        }
+    });
 
 
-// Fermer la fenêtre modale en cliquant sur le bouton de fermeture
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    
-});
-
-// Fermer la fenêtre modale en cliquant en dehors du contenu
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
+    // Fermer la fenêtre modale en cliquant sur le bouton de fermeture
+    closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
-    }
-});
+    });
+
+    // Fermer la fenêtre modale en cliquant en dehors du contenu
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
 
     // Charger les données initiales

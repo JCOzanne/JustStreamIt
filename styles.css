@@ -1,7 +1,7 @@
-
+/* Styles pour le fond du site */
 html, body {
-    background-color: #000000; 
-    color: #ffffff; 
+    background-color: #000000;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -9,9 +9,9 @@ html, body {
 }
 
 header {
-    background-color: #333; 
+    background-color: #333;
     color: white;
-    padding: 1em 2em; 
+    padding: 1em 2em;
     text-align: center;
     display: flex;
     align-items: center;
@@ -29,6 +29,7 @@ header h1 {
 }
 
 
+/* Styles pour la section du meilleur film */
 #best-movie {
     display: flex;
     justify-content: center;
@@ -144,14 +145,8 @@ footer {
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
-}
-
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-     border-radius: 8px;
+    position: relative;
+    padding-bottom: 60px;
 }
 
 .close-btn:hover,
@@ -174,7 +169,7 @@ footer {
     }
 }
 
-
+/* Hide additional movies */
 .movie-card.hidden {
     display: none;
 }
@@ -189,4 +184,17 @@ footer {
     display: block;
     margin: 1em auto;
      border-radius: 8px;
+}
+.close-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 1em;
+    font-weight: bold;
 }
