@@ -39,7 +39,7 @@ header h1 {
 }
 
 #best-movie-card {
-    border: 2px solid #007BFF;
+    border: 2px solid #FFD700;
     padding: 1em;
     text-align: center;
     background-color: #1e1e1e;
@@ -188,4 +188,14 @@ footer {
     bottom: 20px;
     font-size: 1em;
     font-weight: bold;
+}
+#category-select {
+    width: 15%;
+    padding: 0.1em;
+    margin: 0.2em 0;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
