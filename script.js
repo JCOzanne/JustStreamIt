@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     categorySelect.addEventListener('change', (event) => {
         const selectedCategory = event.target.value;
         if (selectedCategory) {
-            freeCategoryMovies.innerHTML = ''; // Clear previous movies
+            freeCategoryMovies.innerHTML = ''
             freeCategoryPage = 1;
             fetchMoviesByGenre(selectedCategory, freeCategoryPage);
         }
@@ -178,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('details-btn')) {
             const movieId = event.target.getAttribute('data-id');
-            console.log('Bouton Détails cliqué, Film ID : ', movieId); // Debug
             displayMovieDetails(movieId);
         }
     });
