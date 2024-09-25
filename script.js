@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour afficher les détails d'un film dans la fenêtre modale
     const displayMovieDetails = async (movieId) => {
-    console.log('Affichage des détails pour le film ID : ', movieId); // Debug
 
     try {
         const response = await fetch(`${apiBaseUrl}${movieId}`);
