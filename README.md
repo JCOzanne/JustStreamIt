@@ -14,14 +14,14 @@ Interface utilisateur permettant de visualiser en temps réel les films les plus
 - fichier script.js chargé de récupérer les données de l'API OCMovies
 
 ### Installation
- - Cloner le repository de l'API OCMovies :
+ - Cloner le repository de l'API OCMovies :  
  `git clone
  https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR`  
 
- -  Suivez les instructions de la documentation de l'API :
+ -  Suivez les instructions de la documentation de l'API :  
  `git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR/blob/master/README.md`  
 
- -  Clonez le dépôt du projet :
+ -  Clonez le dépôt du projet :  
 `git clone  https://github.com/JCOzanne/JustStreamIt`  
 
  -  Ouvrez le fichier index.html dans un navigateur
