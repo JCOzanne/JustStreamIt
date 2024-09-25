@@ -15,7 +15,8 @@ Interface utilisateur permettant de visualiser en temps réel les films les plus
 
 ### Installation
  - Cloner le repository de l'API OCMovies :
- `git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR`  
+ `git clone
+ https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR`  
 
  -  Suivez les instructions de la documentation de l'API :
  `git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR/blob/master/README.md`  
